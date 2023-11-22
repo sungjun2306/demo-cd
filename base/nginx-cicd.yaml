@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-dp-cicd-jsj
+  namespace: test-jsj
+  labels:
+    app: nginx-jsj
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-jsj
+  template:
+    metadata:
+      labels:
+        app: nginx-jsj
+    spec:
+      containers:
+      - name : nginx
+        image: sungjun2306/nginx:1.25
